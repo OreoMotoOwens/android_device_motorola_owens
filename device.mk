@@ -306,10 +306,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
 
-# Vibrator HAL
+# Vibrator
 PRODUCT_PACKAGES += \
-	android.hardware.vibrator@1.0-impl \
-    android.hardware.vibrator@1.0-service.owens
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service.cedric
 
 # Wifi
 PRODUCT_PACKAGES += \

@@ -42,3 +42,30 @@
 
 # WCNSS
 /sys/module/wcnsscore/parameters(/.*)?                   u:object_r:sysfs_wcnsscore:s0
+
+/data/misc/perfd(/.*)?                                          u:object_r:perfd_data_file:s0
+/data/system/perfd(/.*)?                                        u:object_r:perfd_data_file:s0
+/data/oemnvitems(/.*)?                                          u:object_r:nv_data_file:s0
+
+/system/vendor/bin/perfd           u:object_r:perfd_exec:s0
+/system/vendor/bin/hw/android\.hardware\.power@1\.1-service-qti          u:object_r:hal_power_default_exec:s0
+/system/vendor/radio(/.*)? u:object_r:radio_data_file:s0
+
+/system/vendor/bin/qmi_motext_hook u:object_r:rild_exec:s0
+
+/sys/kernel/debug/rmt_storage(/.*)? u:object_r:debugfs_rmt_storage:s0
+
+# Fingerprint custom hal
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service_32 u:object_r:hal_fingerprint_default_exec:s0
+
+# Usb hal
+/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.cedric       u:object_r:hal_usb_default_exec:s0
+
+# Fingerprint custom hal
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-fpcservice u:object_r:hal_fingerprint_default_exec:s0
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@1\.0-service.cedric   u:object_r:hal_vibrator_default_exec:s0
+/sys/devices/virtual/timed_output/vibrator/vtg_default                            u:object_r:sysfs_vibrator:s0
+/sys/devices/virtual/timed_output/vibrator/vtg_level                            u:object_r:sysfs_vibrator:s0
+/sys/devices/virtual/timed_output/vibrator/vtg_min                            u:object_r:sysfs_vibrator:s0
+/sys/devices/virtual/timed_output/vibrator/vtg_max                            u:object_r:sysfs_vibrator:s0

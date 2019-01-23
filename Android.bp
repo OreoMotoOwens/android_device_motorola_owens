@@ -1,4 +1,7 @@
 subdirs = [
+<<<<<<< HEAD
     "libhidl",
+=======
+>>>>>>> f9f8150... cedric: switch to binderized vibrator service
     "vibrator",
 ]
