@@ -1,1 +1,1 @@
-type etsd_device, dev_type;
+type laser_device, dev_type;

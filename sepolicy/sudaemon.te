@@ -1,0 +1,11 @@
+allow sudaemon accessibility_service:service_manager { find };
+allow sudaemon activity_service:service_manager { find };
+allow sudaemon account_service:service_manager { find };
+allow sudaemon deviceidle_service:service_manager { find };
+allow sudaemon display_service:service_manager { find };
+allow sudaemon input_method_service:service_manager { find };
+allow sudaemon package_service:service_manager { find };
+allow sudaemon surfaceflinger_service:service_manager { find };
+allow sudaemon user_service:service_manager { find };
+allow sudaemon window_service:service_manager { find };
+
