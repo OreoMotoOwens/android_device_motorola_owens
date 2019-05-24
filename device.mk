@@ -102,7 +102,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
     audiod \
     audio.a2dp.default \
-    audio.primary.$(TARGET_BOARD_PLATFORM) \
+    audio.primary.msm8937 \
     audio.r_submix.default \
     audio.usb.default \
     libaudio-resampler \
@@ -195,7 +195,7 @@ PRODUCT_PACKAGES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
-    lights.$(TARGET_BOARD_PLATFORM)
+    lights.msm8937
 
 # LineageActions
 #PRODUCT_PACKAGES += \
