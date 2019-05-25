@@ -148,6 +148,14 @@ ro.fm.transmitter=false
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
+# Dalvik
+dalvik.vm.heapgrowthlimit=192m
+dalvik.vm.heapsize=384m
+dalvik.vm.heapstartsize=8m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=512k
+dalvik.vm.heapmaxfree=8m
+
 # HWUI
 ro.hwui.texture_cache_size=72
 ro.hwui.layer_cache_size=48
@@ -198,10 +206,6 @@ ro.radio.imei.sv=2
 ro.mot.ignore_csim_appid=true
 ro.cutoff_voltage_mv=3200
 
-# system.prop for owens
-
-# Display
-ro.sf.lcd_density=320
 
 
 
