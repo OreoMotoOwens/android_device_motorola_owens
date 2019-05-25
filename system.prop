@@ -1,11 +1,9 @@
 # system.prop for owens
 
+ro.build.version.qcom=LA.UM.5.6.r1-03800-89xx.0
+
 # Display
 ro.sf.lcd_density=320
-
-# system.prop for qcom318-32
-#
-ro.build.version.qcom=LA.UM.5.6.r1-03800-89xx.0
 
 # Radio
 rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so
