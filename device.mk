@@ -346,3 +346,6 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-owens.conf:system/etc/thermal-engine-owens.conf
+    
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
