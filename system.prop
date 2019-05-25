@@ -156,6 +156,12 @@ dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=512k
 dalvik.vm.heapmaxfree=8m
 
+# EXPERIMENTAL DALVIK
+dalvik.vm.image-dex2oat-Xms=64m
+dalvik.vm.image-dex2oat-Xmx=64m
+dalvik.vm.dex2oat-Xms=64m
+dalvik.vm.dex2oat-Xmx=512m
+
 # HWUI
 ro.hwui.texture_cache_size=72
 ro.hwui.layer_cache_size=48
