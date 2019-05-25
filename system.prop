@@ -198,10 +198,6 @@ ro.radio.imei.sv=2
 ro.mot.ignore_csim_appid=true
 ro.cutoff_voltage_mv=3200
 
-# system.prop for owens
-
-# Display
-ro.sf.lcd_density=320
 
 
 
