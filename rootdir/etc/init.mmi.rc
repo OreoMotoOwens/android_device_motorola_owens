@@ -302,7 +302,7 @@ on charger
     trigger moto-charger
 
 on moto-charger
-    setprop ro.board.platform msm8953
+    setprop ro.board.platform msm8937
     load_system_props
     trigger firmware_mounts_complete
     start thermal-com
