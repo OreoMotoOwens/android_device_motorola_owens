@@ -283,7 +283,7 @@ PRODUCT_PACKAGES += \
     init.qcom.rc \
     
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/rootdir/etc/ueventd.qcom.rc:system/vendor/ueventd.rc
+	$(LOCAL_PATH)/rootdir/etc/ueventd.rc:system/vendor/ueventd.rc
 	
 # Seccomp
 PRODUCT_COPY_FILES += \
