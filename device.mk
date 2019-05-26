@@ -271,7 +271,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     wlan_carrier_bin.sh \
-    init.qcom.bt.sh \
     init.mmi.touch.sh \
     init.qcom.ril.sh \
 
