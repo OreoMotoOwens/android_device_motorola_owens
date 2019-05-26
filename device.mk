@@ -270,11 +270,10 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    init.target.rc \
     wlan_carrier_bin.sh \
     init.qcom.bt.sh \
+    init.mmi.touch.sh \
     init.qcom.ril.sh \
-    init.platform.rc
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
