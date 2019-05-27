@@ -251,10 +251,6 @@ PRODUCT_PACKAGES += \
     libOmxVidcCommon \
     libstagefrighthw
 
-# Post intallation script
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/post_install.sh:install/bin/post_install.sh
-    
 # RIL
 PRODUCT_PACKAGES += \
     libqsap_shim \
