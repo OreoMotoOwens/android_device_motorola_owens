@@ -281,10 +281,8 @@ PRODUCT_PACKAGES += \
     init.mmi.rc \
     init.mmi.usb.rc \
     init.qcom.rc \
-    
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/rootdir/etc/ueventd.rc:system/vendor/ueventd.rc
-	
+	uevent.rc
+
 # Seccomp
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp_policy/mediacodec.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediacodec.policy
