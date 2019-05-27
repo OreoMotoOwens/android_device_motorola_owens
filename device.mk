@@ -281,7 +281,7 @@ PRODUCT_PACKAGES += \
     init.mmi.rc \
     init.mmi.usb.rc \
     init.qcom.rc \
-	uevent.rc
+    uevent.rc
 
 # Seccomp
 PRODUCT_COPY_FILES += \
