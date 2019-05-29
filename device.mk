@@ -30,8 +30,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
-    frameworks/native/data/etc/android.hardware.nfc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.xml \
-    frameworks/native/data/etc/android.hardware.nfc.hce.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.nfc.hce.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
@@ -79,10 +77,10 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
-    $(LOCAL_PATH)/configs/mixer_paths.xml:system/etc/mixer_paths.xml \
-    $(LOCAL_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/configs/audio_platform_info_extcodec.xml:system/etc/audio_platform_info_extcodec.xml
+    $(LOCAL_PATH)/configs/audio_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf \
+    $(LOCAL_PATH)/configs/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/configs/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/configs/audio_platform_info_extcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_extcodec.xml
     
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -113,7 +111,9 @@ PRODUCT_PACKAGES += \
     
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbt-vendor
+    libbt-vendor \
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
 
 # Camera
 PRODUCT_COPY_FILES += \
@@ -139,6 +139,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     android.hardware.renderscript@1.0-impl \
+    copybit.msm8937 \
     gralloc.msm8937 \
     hwcomposer.msm8937 \
     memtrack.msm8937
@@ -149,9 +150,11 @@ PRODUCT_COPY_FILES += \
     
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
+	android.hardware.drm@1.0-service \
+    android.hardware.drm@1.0-impl \ 
+    android.hardware.drm@1.0-service.widevine \
     libprotobuf-cpp-lite
-    
+
 # Ebtables
 PRODUCT_PACKAGES += \
     ebtables \
@@ -164,7 +167,8 @@ PRODUCT_PACKAGES += \
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl
+    android.hardware.gatekeeper@1.0-impl \
+    android.hardware.gatekeeper@1.0-service
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -188,13 +192,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/fpc1020.kl:system/usr/keylayout/fpc1020.kl
 
-# Keymaster
+# Keymaster HAL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+    android.hardware.keymaster@3.0-impl \
+    android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service \
     lights.msm8937
 
 # LineageActions
@@ -211,8 +217,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_google_video.xml
     
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # Net
@@ -220,24 +226,6 @@ PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
     libandroid_net \
     netutils-wrapper-1.0
-    
-# NFC
-PRODUCT_COPY_FILES += \
-    frameworks/base/nfc-extras/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/libnfc-brcm.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-brcm.conf \
-    $(LOCAL_PATH)/configs/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf \
-    $(LOCAL_PATH)/configs/libnfc-nxp_ds.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp_ds.conf \
-
-PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.0-impl \
-    libnfc \
-    libnfc_jni \
-    nfc_nci.addison \
-    NfcNci \
-    Tag \
-    com.android.nfc_extras
     
 # OMX
 PRODUCT_PACKAGES += \
@@ -263,6 +251,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
+    
+# Power
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.0-service \
+    android.hardware.power@1.0-impl \
+    power.msm8937
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -339,6 +333,11 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-owens.conf:system/etc/thermal-engine-owens.conf
+
+PRODUCT_PACKAGES += \
+	android.hardware.thermal@1.0-impl \
+	android.hardware.thermal@1.0-service \
+	thermal.msm8937
     
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
