@@ -337,3 +337,12 @@ PRODUCT_PACKAGES += \
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+
+#for internal debug
+#ADDITIONAL_DEFAULT_PROPERTIES += \
+PRODUCT_PROPERTY_OVERRIDES += \
+ ro.secure=0 \
+ ro.adb.secure=0 \
+ ro.debuggable=1 \
+ persist.service.adb.enable=1 \
+ security.perf_harden=0
