@@ -389,6 +389,8 @@ vendor/lib/hw/vulkan.msm8937.so
 vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
+vendor/lib/libc2d30-a3xx.so
+vendor/lib/libc2d30-a4xx.so
 vendor/lib/libc2d30-a5xx.so
 vendor/lib/libc2d30_bltlib.so
 vendor/lib/libCB.so
@@ -401,6 +403,7 @@ vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
+vendor/lib/libsc-a2xx.so
 vendor/lib/libsc-a3xx.so
 
 # Graphics firmware
