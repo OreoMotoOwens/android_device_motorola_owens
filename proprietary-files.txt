@@ -187,6 +187,7 @@ vendor/lib/libmmqjpegdma.so
 vendor/lib/libmot_afd.so
 vendor/lib/libmot_gpu_mapper.so
 vendor/lib/libmotocalibration.so
+vendor/lib/lib_mot_led_calibration.so
 vendor/lib/liboptizoom.so
 vendor/lib/libqomx_core.so
 vendor/lib/libqomx_jpegdec.so
