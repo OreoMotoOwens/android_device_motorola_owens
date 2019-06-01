@@ -1,7 +1,6 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,9 +18,30 @@
 set -e
 
 # Required!
-export DEVICE=owens
-export DEVICE_PLATFORM=msm8937-common
-export VENDOR=motorola
-export DEVICE_BRINGUP_YEAR=2017
+DEVICE=owens
+VENDOR=motorola
 
-./../../$VENDOR/$DEVICE_PLATFORM/setup-makefiles.sh $@
+# Load extractutils and do some sanity checks
+MY_DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+
+CM_ROOT="$MY_DIR"/../../..
+
+HELPER="$CM_ROOT"/vendor/aosp/build/tools/extract_utils.sh
+if [ ! -f "$HELPER" ]; then
+    echo "Unable to find helper script at $HELPER"
+    exit 1
+fi
+. "$HELPER"
+
+# Initialize the helper
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+
+# Copyright headers and guards
+write_headers
+
+# The standard blobs
+write_makefiles "$MY_DIR"/proprietary-files.txt true
+
+# We are done!
+write_footers
