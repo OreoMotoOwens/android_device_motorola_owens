@@ -275,6 +275,13 @@ etc/firmware/cpp_firmware_v1_6_0.fw
 etc/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw
 
+# Motorola libraries
+vendor/lib/lib_mot_led_calibration.so
+vendor/lib/libmotimager_utils.so
+vendor/lib/libmotaudioutils.so
+vendor/lib/libmot_lux_standardization.so
+vendor/lib/libmot-qc-fd-offline.so
+
 # Display
 -framework/com.qti.snapdragon.sdk.display.jar
 -vendor/app/colorservice/colorservice.apk
