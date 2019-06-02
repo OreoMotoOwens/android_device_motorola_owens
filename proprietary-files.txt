@@ -451,6 +451,7 @@ vendor/lib/libOmxAlacDecSw.so
 vendor/lib/libOmxApeDec.so
 vendor/lib/libOmxApeDecSw.so
 vendor/lib/libOmxWmaDec.so
+vendor/lib/libqti-perfd-client.so
 
 # Qualcomm framework
 lib/libdiag_system.so
