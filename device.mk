@@ -279,6 +279,11 @@ PRODUCT_PACKAGES += \
     motosh \
     sensorhub.msm8937 \
     sensors.msm8937
+    
+# Sensors
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf
 
 # Telephony
 PRODUCT_PACKAGES += \
