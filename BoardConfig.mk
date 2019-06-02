@@ -19,6 +19,12 @@ DEVICE_PATH := device/motorola/owens
 
 BOARD_VENDOR := motorola-qcom
 
+# AIDs and CAPS
+TARGET_FS_CONFIG_GEN := \
+    $(DEVICE_PATH)/fs_config/mot_aids.txt \
+    $(DEVICE_PATH)/fs_config/qcom_aids.txt \
+    $(DEVICE_PATH)/fs_config/file_caps.txt
+
 # Platform
 TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
@@ -27,10 +33,33 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 
+# Architecture
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
+TARGET_CPU_VARIANT := cortex-a53
+
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := owens,owens_retail
 TARGET_KERNEL_CONFIG := owens_defconfig
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
+# Kernel
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
+BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_IMAGE_NAME := zImage
+BOARD_KERNEL_LZ4C_DT := true
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_SEPARATED_DT := true
+TARGET_CUSTOM_DTBTOOL := dtbTool_custom
+BOARD_DTBTOOL_ARGS := -3 -m 1
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+TARGET_KERNEL_ARCH := arm
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
+LZMA_RAMDISK_TARGETS := recovery
 
 # FM
 BOARD_HAVE_QCOM_FM := true
@@ -52,19 +81,6 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-# AIDs and CAPS
-TARGET_FS_CONFIG_GEN := \
-    $(DEVICE_PATH)/fs_config/mot_aids.txt \
-    $(DEVICE_PATH)/fs_config/qcom_aids.txt \
-    $(DEVICE_PATH)/fs_config/file_caps.txt
-
-# Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
-
 # Below is temporarily commented out because for now 64-bit binder support is disabled in kernel.
 # Binder API version
 #TARGET_USES_64_BIT_BINDER := true
@@ -72,22 +88,6 @@ TARGET_CPU_VARIANT := cortex-a53
 #Device manifest
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
-
-# Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
-BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_IMAGE_NAME := zImage
-BOARD_KERNEL_LZ4C_DT := true
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_SEPARATED_DT := true
-TARGET_CUSTOM_DTBTOOL := dtbTool_custom
-BOARD_DTBTOOL_ARGS := -3 -m 1
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_ARCH := arm
-TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
-LZMA_RAMDISK_TARGETS := recovery
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
