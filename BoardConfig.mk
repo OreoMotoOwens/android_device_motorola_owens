@@ -22,6 +22,9 @@ BOARD_VENDOR := motorola-qcom
 # Platform
 TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
+
+# Bootloader
+TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 
 # Asserts
@@ -46,16 +49,14 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # SELinux
-#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # AIDs and CAPS
 TARGET_FS_CONFIG_GEN := \
     $(DEVICE_PATH)/fs_config/mot_aids.txt \
     $(DEVICE_PATH)/fs_config/qcom_aids.txt \
     $(DEVICE_PATH)/fs_config/file_caps.txt
-
-# Bootloader
-TARGET_NO_BOOTLOADER := true
 
 # Architecture
 TARGET_ARCH := arm
@@ -64,6 +65,7 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
 
+# Below is temporarily commented out because for now 64-bit binder support is disabled in kernel.
 # Binder API version
 #TARGET_USES_64_BIT_BINDER := true
 
