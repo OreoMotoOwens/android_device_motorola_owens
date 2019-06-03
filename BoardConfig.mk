@@ -81,10 +81,6 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-# Sensor
-BOARD_HAS_MODS_SUPPORT := false
-BOARD_USES_CAP_SENSOR_SX9310 := true
-
 # Below is temporarily commented out because for now 64-bit binder support is disabled in kernel.
 # Binder API version
 #TARGET_USES_64_BIT_BINDER := true
