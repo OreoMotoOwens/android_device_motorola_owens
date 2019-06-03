@@ -579,7 +579,7 @@ vendor/lib/libscvePanorama.so
 vendor/lib/libscvePanorama_lite.so
 
 # Sensors
-vendor/etc/firmware/sensorhubfw.bin
+vendor/lib/libsensor_reg.so
 
 # Thermal
 # vendor/bin/thermal-engine
