@@ -82,18 +82,8 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Sensor
-BOARD_USES_MOT_SENSOR_HUB := true
+BOARD_HAS_MODS_SUPPORT := false
 BOARD_USES_CAP_SENSOR_SX9310 := true
-MOT_SENSOR_HUB_HW_TYPE_L0 := true
-MOT_AP_SENSOR_HW_REARPROX := true
-MOT_AP_SENSOR_HW_REARPROX_2 := true
-MOT_SENSOR_HUB_HW_AK09912 := true
-MOT_SENSOR_HUB_HW_BMI160 := true
-MOT_SENSOR_HUB_FEATURE_CHOPCHOP := true
-MOT_SENSOR_HUB_FEATURE_LIFT := true
-MOT_SENSOR_HUB_FEATURE_PEDO := true
-MOT_SENSOR_HUB_FEATURE_LA := true
-MOT_SENSOR_HUB_FEATURE_GR := true
 
 # Below is temporarily commented out because for now 64-bit binder support is disabled in kernel.
 # Binder API version
