@@ -41,4 +41,3 @@ LOCAL_SRC_FILES := mixer.c
 LOCAL_MODULE := libshim_adsp
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
-
