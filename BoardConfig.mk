@@ -78,7 +78,7 @@ BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # SELinux
-#include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy/sepolicy.mk
 #BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Below is temporarily commented out because for now 64-bit binder support is disabled in kernel.
