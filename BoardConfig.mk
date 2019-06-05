@@ -171,11 +171,6 @@ TARGET_RIL_VARIANT := caf
 # VoLTE
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 
-# Shim
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/libmdmcutback.so|libqsap_shim.so \
-    /system/vendor/lib/libsensorndkbridge.so|libshim_ril.so
-
 # Telephony
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
