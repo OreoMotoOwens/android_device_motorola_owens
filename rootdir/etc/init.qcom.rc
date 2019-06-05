@@ -636,6 +636,11 @@ service netmgrd /system/vendor/bin/netmgrd
     user root
     group root wifi wakelock radio inet
 
+service atfwd /vendor/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+
 service qti /system/vendor/bin/qti
     class main
     user radio
