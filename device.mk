@@ -330,6 +330,11 @@ PRODUCT_PACKAGES += \
 	android.hardware.thermal@1.0-impl \
 	android.hardware.thermal@1.0-service \
 	thermal.msm8937
+	
+# Health
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
